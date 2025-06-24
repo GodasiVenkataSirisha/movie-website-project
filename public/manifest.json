@@ -1,0 +1,16 @@
+{
+    "name": "My Vite App",
+    "short_name": "ViteApp",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "A simple Vite-powered web app",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      }
+    ],
+    "theme_color": "#000000"
+  }
