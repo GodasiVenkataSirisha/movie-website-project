@@ -3,6 +3,8 @@ import Axios from "axios";
 import styled from "styled-components";
 import MovieComponent from "./Components/MovieComponent";
 import MovieInfoComponent from "./Components/MovieInfoComponent";
+import { FaHome} from "react-icons/fa";
+
 
 export const API_KEY = "a9118a3a";
 
@@ -14,36 +16,39 @@ const AppName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 const Header = styled.div`
   background-color: black;
   color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
-  font-size: 25px;
+  padding: 4px 10px;
+  font-size: 18px;
   font-weight: bold;
   box-shadow: 0 3px 6px 0 #555;
 `;
 const SearchBox = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 10px 10px;
+  padding: 4px;
   border-radius: 6px;
   margin-left: 20px;
   width: 50%;
   background-color: white;
 `;
 const SearchIcon = styled.img`
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 24px;
 `;
 const MovieImage = styled.img`
-  width: 48px;
-  height: 48px;
-  margin: 15px;
+  width: 24px;
+  height: 24px;
+  margin: 8px;
 `;
 const SearchInput = styled.input`
   color: black;
@@ -94,11 +99,11 @@ function App() {
     <Container>
       <Header>
         <AppName>
-          <MovieImage src="/public/movie-icon.svg" />
+          <img src={`${import.meta.env.BASE_URL}movie-icon.svg`} alt="Movie Icon" />
           React Movie App
         </AppName>
         <SearchBox>
-          <SearchIcon src="/public/search-icon.svg" /> 
+          <img src={`${import.meta.env.BASE_URL}search-icon.svg`} alt="Search Icon" />
           <SearchInput
             placeholder="Search Movie"
             value={searchQuery}
@@ -117,7 +122,7 @@ function App() {
             />
           ))
         ) : (
-          <Placeholder src="/public/movie-icon.svg" />
+          <Placeholder src={`${import.meta.env.BASE_URL}movie-icon.svg`} alt="Movie Icon"/>
         )}
       </MovieListContainer>
     </Container>
